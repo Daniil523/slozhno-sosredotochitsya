@@ -1,5 +1,388 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: 'IBM Plex mono', sans-serif;
+  background-color: var(--page-color);
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.bordered {
+  position: relative;
+}
+
+.bordered::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 25px;
+    width: 25px;
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+
+.bordered::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 25px;
+    width: 25px;
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--text-shadow-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.header {
+  min-height: 100vh;
+  background: center no-repeat var(--header-background-img);
+  background-size: cover;
+}
+
+.header__rec {
+  visibility: var(--header-rec-visibility);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.header__rec::after {
+  content: "";
+  display: inline;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background: var(--accent-color);
+}
+
+.header__theme-menu-list {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header__theme-menu-button {
+  padding: 2px 13px 4px;
+  text-transform: lowercase;
+  background-color: transparent;
+  line-height: 18px;
+  font-size: 18px;
+  color: var(--accent-color);
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button:hover {
+  cursor: pointer;
+  border: 1px solid var(--hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.header__title {
+  margin-top: 236px;
+  transform: translate(-20px);
+}
+
+.title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--text-shadow-color);
+}
+ 
+.header__subtitle {
+  width: 50%;
+  margin:  77px 0 0 50%;
+}
+
+.subtitle {
+  background-color: var(--subtitle-bg-color);
+  color: var(--subtitle-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.subtitle_light {
+  font-weight: normal;
+}
+
+.main {
+  margin: 60px 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.section__title {
+  font-size: 18px;
+  color: var(--section-title-color);
+}
+
+.section-reasons {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+}
+
+.section-reasons__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--text-color);
+ }
+
+.section-factors > .section__title {
+  width: 32%;
+  margin-bottom: 22px;
+}
+
+.section-factors__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.section-recommendations {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+}
+
+.section-recommendations__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-gallery__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.image-sunset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.image-ice-cream {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.image-tape {
+  grid-row-start: 2;
+  grid-row-end: 6;
+}
+
+.image-street {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+.section-gallery__images-item > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header__title{
+    margin-top: 144px;
+  }
+
+  .header__subtitle{
+    margin-top: 134px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: end;
+    padding-top: 193px;
+  }
+
+  .section-reasons{
+    grid-gap: 20px;
+  }
+
+  .section-recommendations{
+    grid-gap: 20px;
+  }
+
+  .section-factors__list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 615px) {
+  .header__title{
+    margin-top: 80px;
+  }
+
+  .header__subtitle{
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 425px) {
+  .main {
+    margin: 40px 0;
+    gap: 50px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+  
+  .bordered::before {
+    top: 10px;
+    right: 10px;
+  }
+
+  .bordered::after {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .header__rec {
+    top: 10px;
+    right: 10px;
+  }
+
+  .header__theme-menu-list {
+    padding-top: 75px;
+  }
+
+  .header__title{
+    margin-top: 68px;
+    transform: none;
+    line-height: 95.7px;
+    letter-spacing: 0px;
+  }
+
+  .header__subtitle{
+    margin-top: 54px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .section-reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .section-factors > .section__title {
+    width: 100%;
+  }
+
+  .section-recommendations {
+    grid-template-columns: 1fr;
+  }
+
+  .section-gallery {
+    gap: 10px;
+  }
+
+  .section-gallery__images {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .image-sunset {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  
+  .image-ice-cream {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
+  }
+  
+  .image-tape {
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .image-street {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
 }
