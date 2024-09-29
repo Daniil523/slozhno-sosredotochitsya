@@ -1,6 +1,7 @@
 .page {
   font-family: 'IBM Plex mono', sans-serif;
   background-color: var(--page-color);
+  background-attachment: fixed;
 }
 
 .container {
@@ -265,7 +266,7 @@
     margin-top: 144px;
   }
 
-  .header__subtitle{
+  .header__subtitle {
     margin-top: 134px;
   }
 
@@ -275,11 +276,11 @@
     padding-top: 193px;
   }
 
-  .section-reasons{
+  .section-reasons {
     grid-gap: 20px;
   }
 
-  .section-recommendations{
+  .section-recommendations {
     grid-gap: 20px;
   }
 
