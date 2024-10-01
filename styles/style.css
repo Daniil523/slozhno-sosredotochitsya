@@ -225,6 +225,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+  font-size: 0;
+  line-height: 0;
 }
 
 .image-sunset {
